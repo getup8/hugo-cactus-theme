@@ -1,10 +1,14 @@
-<ul id="post-list">
-    {{ range where .Paginator.Pages "Params.hidden" "ne" "true" }}
+<ul class="post-list">
+    <!-- Kinda a hack to make sure there are 5 there if avail. -->
+    {{ range first 5 (where (.Paginator 20).Pages "Params.hidden" "ne" "true") }}
     {{ $url := replace .Permalink .Site.BaseURL "" }}
         {{ if ne $url "about/" }}
             <li>
-                <a href='{{ .Permalink }}'><aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
-                <a href='{{ .Permalink }}'>{{ .Title }} <h2>{{ .Description | markdownify }}</h2></a>
+                <a href='{{ .Permalink }}'>
+                    <aside class="dates">{{ .Date.Format "Jan 2" }}</aside>
+                    <h1>{{ .Title }}</h1>
+                    <h2>{{ .Description | markdownify }}</h2>
+                </a>
             </li>
         {{ end }}
     {{ end }}

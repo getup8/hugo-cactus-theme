@@ -8,7 +8,8 @@
                     <h1>{{ .Title }}</h1>
                     <h2 class="headline">
                     {{ .Date.Format "January 2, 2006" }} 
-                    <br>
+                    </h2>
+                    <h2 class="headline">
                     {{ with .Params.tags }}
                     {{ if ge (len .) 1 }}
                         {{ range . }}
@@ -18,7 +19,7 @@
                     {{ end}}
                     </h2>
                 </header>
-                <section id="post-body">
+                <section class="post-body">
                     {{ .Content }}
                 </section>
             </article>
