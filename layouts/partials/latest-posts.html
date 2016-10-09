@@ -1,13 +1,17 @@
-<ul class="post-list archive readmore"> 
+<ul class="post-list readmore">  
     <h3>{{ with .Site.Params.readMore }}{{ . }}{{ else }}Read more{{ end }}</h3>
 
-    <!-- Kinda a hack to make sure there are 10 there if avail. -->
-    {{ range first 10 (where (.Paginator 20).Pages "Params.hidden" "ne" "true") }}
+    {{ range first 10 (where .Site.Pages "Params.hidden" "ne" "true") }}
+
     {{ $url := replace .Permalink .Site.BaseURL "" }}
         {{ if ne $url "about/" }}
-        <li>
-            <a href="{{ .Permalink }}">{{ .Title }}<aside class="dates">{{ .Date.Format "Jan 2" }}</aside></a>
-        </li>
+            <li>
+                <a href='{{ .Permalink }}'>
+                    <aside class="date">{{ .Date.Format "Jan 2" }}</aside>
+                    <h1>{{ .Title }}</h1>
+                    <h2>{{ .Description | markdownify }}</h2>
+                </a>
+            </li>
         {{ end }}
     {{ end }}
 </ul>

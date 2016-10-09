@@ -1,20 +1,59 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto';
 @import 'https://fonts.googleapis.com/css?family=Source+Code+Pro';
 
-/* Reset */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
-*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+/******************************************************************************
+ * Reset
+ *****************************************************************************/
 
-/* Base font size */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,
+abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,
+strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,
+label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,
+details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,
+section,summary,time,mark,audio,video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display: block
+}
+
+body{
+	line-height: 1
+}
+
+blockquote, q {
+	quotes: none
+}
+
+blockquote:before,blockquote:after,q:before,q:after{
+	content:none
+}
+
+table{
+	border-collapse: collapse;
+	border-spacing: 0
+}
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/******************************************************************************
+ * Main Elements
+ *****************************************************************************/
+
 html {
 	font-size: 16px;
 	height: 100%;
 }
-
-/* Spacing */
-/*.post h1, h3, h4, h5, p, .post-body ul, .post-list li, pre {
-margin-bottom: 20px;
-}*/
 
 body {
 	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -45,6 +84,7 @@ h2 {
 
 h3 {
 	font-size: 1.4rem;
+	margin: 0.8rem 0;
 }
 
 h4 {
@@ -88,7 +128,6 @@ li	{
 b,
 strong {
 	font-weight: 500;
-/*    color: #1E2025;*/
 }
 
 em, i {
@@ -136,15 +175,61 @@ header {
 
 .post-list h1 {
 	font-size: 1.2rem;
+	margin-top: 0;
+	margin-bottom: 0.6rem;
 }
 
 .post-list h2 {
 	font-size: 0.95rem;
 	color: #AAA;
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#wrapper {
+ul.post-list {
+	margin: 0;
+}
+
+.post-list li {
+	padding: 0;
+}
+
+.post-list a {
+	display: block;
+	padding: 1rem;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.post-list a:hover {
+	background: #FAFAFA;
+}
+
+.wrapper {
 	max-width: 700px;
+	margin: 0 auto;
+    padding: 60px 40px 100px 40px;
+}
+
+/* Links */
+
+a,
+.post-list a:hover h1,
+.post-list a:hover .date {
+	color: #5694f1;
+	text-decoration: none;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+a:hover {
+	color: #88b5fb;
 }
 
 /******************************************************************************
@@ -152,13 +237,15 @@ header {
  *****************************************************************************/
 
 
-.profile #wrapper {
-	padding: 100px 40px 0px;
-	/*max-width: 600px;*/
-	margin: 0 auto;
+.wrapper.home {
+	padding: 0px 40px 20px 40px;
 }
 
-.profile #header {
+.profile .wrapper {
+	padding: 100px 40px 0px;
+}
+
+.profile header {
 	border-bottom: 1px solid #eee;
 	margin-bottom: 40px;
 	padding-bottom: 40px;
@@ -166,12 +253,19 @@ header {
 	position: relative;
 }
 
-.profile #avatar {
+.profile .avatar {
 	display: inline-block;
 	width: 80px;
 	height: 80px;
 	border-radius: 50%;
 	margin-bottom: 20px;
+}
+
+.home .avatar {
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
 }
 
 nav.main-nav {
@@ -197,61 +291,6 @@ nav.main-nav a.cta {
 	background: #5badf0;
 	color: #fff;
 	margin-left: 12px;
-}
-
-#wrapper {
-  /*max-width: 600px;*/
-  margin: 0 auto;
-  padding: 60px 40px 100px 40px;
-}
-
-#wrapper.home {
-	/*max-width: 600px;*/
-	margin: 0 auto;
-	padding: 0px 40px 20px 40px;
-}
-
-.home #avatar {
-	float: right;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-}
-
-/* Typography */
-/*Accent color*/
-a,
-#title,
-.post-list a:hover,
-.post-list li:hover .dates,
-#title:hover {
-	text-decoration: none;
-	color: #5694f1;
-}
-
-p a {
-	color: #5694f1;
-}
-
-/*Transitions*/
-a,
-#post-nav a,
-.post-list a	{
-	-webkit-transition: all 0.15s ease;
-	-moz-transition: all 0.15s ease;
-	-ms-transition: all 0.15s ease;
-	-o-transition: all 0.15s ease;
-	transition: all 0.15s ease;
-}
-
-
-#title {
-	display: inline-block;
-	line-height: 100%;
-	font-weight: 500;
-	font-size: 19px;
-	margin: 0;
-	padding-bottom: 20px;
 }
 
 .description {
@@ -372,8 +411,7 @@ img {
 Post List
 =========================================== */
 
-.post-list li,
-#archive-list li {
+.post-list li {
 	list-style-type: none;
 }
 
@@ -392,39 +430,15 @@ Post List
 	font: bold 19px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;*/
 }
 
-.post-list .dates {
+.post-list .date {
 	float: right;
-/*	position: relative;
-	top: 1px;
-	font: 300 17px/1.8 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #bbb;*/
+	color: #BBB;
 }
 
 .post-list-footer {
 /*	border-top: 1px solid #eee;
 	margin-top: 20px;
 	padding-top: 100px;*/
-}
-
-#archive-link {
-	display: inline-block;
-	font-size: 13px;
-	font-weight: bold;
-	border-radius: 4px;
-	padding: 3px 10px 6px;
-	box-shadow: 0 0 0 1px hsla(207,83%,80%,1);
-}
-
-#archive-link:hover {
-	background: #5694f1;
-	color: #fff;
-	box-shadow: 0 0 0 1px #5694f1;
-}
-
-#archive-link span {
-	position: relative;
-	top: 0;
-	font-size: 17px;
 }
 
 footer {
@@ -434,7 +448,7 @@ footer {
 }
 
 /* Post Page */
-#header {
+header {
 	border-bottom: 1px solid #eee;
 }
 
@@ -442,7 +456,7 @@ footer {
 	margin: 3rem 0 0 0;
 }
 
-#post-meta {
+.post-meta {
 	font-size: 13px;
 	font-weight: bold;
 	line-height: 1.4;
@@ -455,28 +469,28 @@ footer {
 	border-bottom: 1px solid #eee;
 }
 
-#post-meta div span {
+.post-meta div span {
 	color: #aaa;
 	font-weight: 500;
 	display: block;
 }
 
-#post-meta div span.dark {
+.post-meta div span.dark {
 	color: #1E2025;
 
 }
 
-#post-meta div {
+.post-meta div {
 	margin: 0 25px 0 0;
 	float: left;
 }
 
-#sharing {
+.sharing {
 	float: right;
 	margin: -2px;
 }
 
-#sharing a {
+.sharing a {
 	font-size: 20px;
 	font-size: 23px;
 	margin-left: 1px;
@@ -486,12 +500,12 @@ footer {
 	vertical-align: middle;
 }
 
-#sharing a:hover {
+.sharing a:hover {
 	opacity: 0.8;
 }
 
 /* Post Navigation */
-#post-nav {
+.post-nav {
 	border-top:1px solid #eee;
 	text-align:center;
 	padding-top:20px;
@@ -500,7 +514,7 @@ footer {
 	margin-top: 40px;
 }
 
-#post-nav span {
+.post-nav span {
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	-ms-transition: all 0.1s linear;
@@ -509,73 +523,36 @@ footer {
 	position: relative;
 }
 
-#post-nav span.prev {
+.post-nav span.prev {
 	float: left;
 }
 
-#post-nav span.next {
+.post-nav span.next {
 	float: right;
 }
 
-#post-nav span .arrow {
+.post-nav span .arrow {
 	position: relative;
 	padding: 1px;
 }
 
-#post-nav span.prev:hover .arrow {
+.post-nav span.prev:hover .arrow {
 	left: -4px;
 }
 
-#post-nav span.next:hover .arrow {
+.post-nav span.next:hover .arrow {
 	right: -4px;
 }
 
-#post-nav span.prev:hover {
+.post-nav span.prev:hover {
 	left: -3px;
 }
 
-#post-nav span.next:hover {
+.post-nav span.next:hover {
 	right: -3px;
 }
 
-/* Archive */
-h1.archive {
-	/*margin-bottom: 0px;*/
-}
-
-h2.month {
-/*	width: 100%;
-	font: bold 13px/1 "Helvetica Neue",helvetica,Arial,sans-serif;
-	text-transform: uppercase;
-	margin-top: 40px;
-	margin-bottom: 10px;
-	padding-bottom: 10px;
-	border-bottom: 1px solid #eee;*/
-}
-
-#archive-list li:last-child {
-	margin-bottom: 0;
-}
-
-#archive-list a {
-	display: block;
-	font: bold 17px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #333;
-}
-
-#archive-list .dates {
-	float: right;
-	position: relative;
-	top: 1px;
-	font: 300 17px/1.7 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #bbb;
-}
-
-#archive-list li a:hover,#archive-list li:hover .dates {
-	color: #5694f1;
-}
-
-#post-meta img.avatar {
+.post-meta img.avatar {
   height: 36px;
   width: 36px;
   float: left;
@@ -585,31 +562,24 @@ h2.month {
   box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
 }
 
-.post-list.archive.readmore h3{
-/*	  font: 400 20px "Helvetica Neue", Helvetica,Arial,sans-serif;
-	  margin-bottom: 30px;*/
+.post-list.readmore {
+	margin-top: 3rem;
+	margin-bottom: 1rem;
 }
 
-.post-list.archive.readmore a {
-/*	font: 400 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;
-	color: #5694f1;*/
+.readmore h3 {
+	color: #AAA;
 }
 
-.post-list.archive.readmore a:hover {
-/*	opacity: 0.8;*/
-}
-
-.post-list.archive.readmore .dates {
-/*	font: 300 16px/1.6 "Helvetica Neue",helvetica,Arial,sans-serif;*/
-}
-#sharing a.facebook {
+.sharing a.facebook {
   background: #4361b3;
 }
-#sharing a.twitter {
+
+.sharing a.twitter {
   background: #4fafed;
 }
 
-#sharing a {
+.sharing a {
   font-size: 20px;
   font-size: 13px;
   font-weight: bold;
@@ -621,11 +591,11 @@ h2.month {
 
 /* Media Queries */
 @media screen and (max-width: 540px) {
-	#wrapper {
+	.wrapper {
 		padding:20px 20px 20px 20px;
 	}
 
-	#header {
+	header {
 		margin-bottom: 60px;
 		border-bottom: 1px solid #eee;
 	}
@@ -634,23 +604,19 @@ h2.month {
 		margin: 40px 0;
 	}
 
-	#footer {
+	.footer {
 		margin-top: 60px;
 	}
 
-	.post-list, #archive-list {
+	.post-list {
 		/*margin-top: 0;*/
 	}
 
-	#post-meta {
+	.post-meta {
 		margin-top: 60px;
 	}
 
-	#title {
-		font-size: 17px;
-	}
-
-	.post-list .dates {
+	.post-list .date {
 		/*display: none;*/
 	}
 
@@ -675,7 +641,7 @@ h2.month {
 
 /* CUSTOM ADDITIONS */
 
-#social {
+.social {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -683,15 +649,9 @@ h2.month {
 
 a.symbol {
     color: #cdd4da;
-    font-size: 2rem;
-    text-decoration: none;
-    margin-right: 0.3rem;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
 }
-
-a.symbol:hover {
-    color: #BCD4DA;
-}
-
 
 
 /* Clearfix */
@@ -701,7 +661,9 @@ a.symbol:hover {
 	clear: both;
 }
 
-.hidden { display: none; }
+.hidden {
+	display: none;
+}
 
 /* Icons */
 @font-face {
