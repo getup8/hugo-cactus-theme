@@ -23,7 +23,7 @@
                     {{ .Content }}
                 </section>
             </article>
-            <footer class="post-meta clearfix">
+            <div class="post-meta clearfix">
                 {{ with .Site.Params.twitter }}<a href="https://twitter.com/{{ . }}">{{ end }}
                         <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.png">
                         <div>
@@ -34,7 +34,7 @@
                 <section class="sharing">
                     {{ partial "share.html" . }}
                 </section>
-            </footer>
+            </div>
 
             {{ template "_internal/disqus.html" . }}
 
