@@ -86,7 +86,8 @@ body {
 	color: #666;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
-	height: 100%;
+	min-height: 100%;
+	padding-bottom: 2rem;
 }
 
 h1,
@@ -105,6 +106,7 @@ h1 {
 h2 {
 	font-size: 1.5rem;
 	margin: 1rem 0;
+	line-height: 1.5;
 }
 
 h3 {
@@ -180,6 +182,7 @@ header {
 	text-align:center;
 	margin-bottom: 2rem;
 	border-bottom: 1px solid #eee;
+	padding-bottom: 1rem;
 }
 
 footer {
@@ -190,7 +193,7 @@ footer {
 }
 
 blockquote {
-	padding-left: 15px;
+	padding-left: 1rem;
 	border-left: 3px solid #eee;
 }
 
@@ -198,16 +201,17 @@ hr {
 	display: block;
 	border: none;
 	height: 1px;
-	margin: 40px auto;
+	margin: 2.5rem auto;
 	background: #eee;
 }
 
 code { 
 	font-family: 'InconsolataGo', Courier, monospace;
-    padding: 0 0.1rem;
+    padding: 0.2rem;
     font-weight: bold;
     font-size: 1rem;
     color: #444;
+    background: #EFEFEF;
 }
 
 pre	{
@@ -221,10 +225,10 @@ pre	{
 
 table {
 	width: 100%;
-	margin: 40px 0;
+	margin: 2rem 0;
 	border-collapse: collapse;
 	font-size: 13px;
-	line-height: 1.5em;
+	line-height: 1.5;
 }
 
 th, td {
@@ -266,6 +270,77 @@ img {
 	border-radius: 3px;
 }
 
+.wrapper {
+	max-width: 700px;
+	margin: 0 auto;
+    padding: 0 2.6rem;
+}
+
+
+/******************************************************************************
+ * Main Navigation
+ *****************************************************************************/
+
+.main-nav {
+	padding: 1.2rem 1.2rem 0;
+	text-align: right;
+	z-index: 10;
+}
+
+.main-nav a {
+	display: inline-block;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.main-nav a.button {
+	background: #5694f1;
+	color: #fff;
+	margin-left: 12px;
+	border-radius: 3px;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+.main-nav a.button:hover {
+	background: #88b5fb;
+}
+
+
+/******************************************************************************
+ * Profile
+ *****************************************************************************/
+
+.profile  {
+	margin-top: 3rem;
+}
+
+.profile h1 {
+	font-size: 1.3rem;
+	font-weight: 300;
+	margin: 0;
+}
+
+.profile h2 {
+    font-size: 0.84rem;
+    color: #AAA;
+    margin-top: 0.8rem;
+}
+
+.profile header {
+	padding-bottom: 2rem;
+}
+
+.avatar {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-bottom: 2rem;
+}
+
 /******************************************************************************
  * Posts
  *****************************************************************************/
@@ -298,12 +373,12 @@ img {
  *****************************************************************************/
 
 .post-nav {
-	border-top:1px solid #eee;
-	text-align:center;
-	padding-top:20px;
-	font-size:13px;
-	font-weight:500;
-	margin-top: 40px;
+	border-top: 1px solid #eee;
+	text-align: center;
+	padding-top: 1rem;
+	font-size: 0.9rem;
+	font-weight: 500;
+	margin-top: 2rem;
 }
 
 .post-nav span {
@@ -443,14 +518,10 @@ ul.post-list {
 	list-style-type: none;
 }
 
-.post-list li:last-child {
-	/*margin-bottom: 0;*/
-}
-
-.post-list li+li {
-/*	padding-top: 20px;
-	border-top: 1px solid #eee;*/
-}
+/*.post-list li+li {
+	padding-top: 20px;
+	border-top: 1px solid #eee;
+}*/
 
 .post-list a {
 	display: block;
@@ -469,6 +540,7 @@ ul.post-list {
 .post-list .date {
 	float: right;
 	color: #BBB;
+	padding-bottom: 0.3rem;
 }
 
 .post-list.readmore {
@@ -482,93 +554,6 @@ ul.post-list {
 
 
 /******************************************************************************
- * Profile
- *****************************************************************************/
-
-.profile .wrapper {
-	padding: 100px 40px 0px;
-}
-
-.profile h1 {
-	font-size: 1.3rem;
-	font-weight: 300;
-}
-
-.profile h2 {
-	font-size: 1rem;
-	color: #AAA;
-}
-
-.profile header {
-	border-bottom: 1px solid #eee;
-	margin-bottom: 40px;
-	padding-bottom: 40px;
-	text-align: center;
-	position: relative;
-}
-
-.profile .avatar {
-	display: inline-block;
-	width: 80px;
-	height: 80px;
-	border-radius: 50%;
-	margin-bottom: 20px;
-}
-
-
-/******************************************************************************
- * Home
- *****************************************************************************/
-
-.wrapper.home {
-	padding: 0px 40px 20px 40px;
-}
-
-.home .avatar {
-	float: right;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-}
-
-.home footer {
-	border-top: none;
-}
-
-
-/******************************************************************************
- * Main Navigation
- *****************************************************************************/
-
-.main-nav {
-	padding: 1.6rem 1.6rem 0;
-	text-align: right;
-	z-index: 10;
-}
-
-.main-nav a {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-}
-
-.main-nav a.button {
-	background: #5694f1;
-	color: #fff;
-	margin-left: 12px;
-	border-radius: 3px;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-.main-nav a.button:hover {
-	background: #88b5fb;
-}
-
-
-/******************************************************************************
  * Social Bar
  *****************************************************************************/
 
@@ -578,7 +563,7 @@ ul.post-list {
     justify-content: center;
 }
 
-a.symbol {
+.symbol {
     color: #cdd4da;
     font-size: 1.4rem;
     margin-right: 0.8rem;
@@ -594,7 +579,6 @@ a.symbol {
 	text-align: center;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1em;
 }
 .icon-facebook:before { content: '\e802'; }
 .icon-facebook-squared:before { content: '\e800'; }
@@ -608,12 +592,6 @@ a.symbol {
 /******************************************************************************
  * Utility
  *****************************************************************************/
-
-.wrapper {
-	max-width: 700px;
-	margin: 0 auto;
-    padding: 60px 40px 100px 40px;
-}
 
 .arrow-left {
 	padding-right: 0.2rem;
@@ -642,40 +620,15 @@ a.symbol {
 
 @media screen and (max-width: 540px) {
 
-	header {
-		margin-bottom: 60px;
-		border-bottom: 1px solid #eee;
-	}
-
-	h1 {
-		/*font-size: 26px;*/
-	}
-
 	.wrapper {
-		padding:20px 20px 20px 20px;
+    	padding: 0 2rem;
 	}
 
 	.post {
-		margin: 40px 0;
-	}
-
-	.post-list {
-		/*margin-top: 0;*/
-	}
-
-	.post-meta {
-		margin-top: 60px;
+		margin: 2rem 0;
 	}
 
 	.post-list .date {
-		/*display: none;*/
-	}
-
-	.post h1 {
-		/*font-size:24px;*/
-	}
-
-	.post h2 {
-		/*font-size:20px;*/
+		float: none;
 	}
 }
