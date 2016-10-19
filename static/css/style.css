@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Roboto';
+@import 'https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed';
 
 @font-face {
   font-family: 'InconsolataGo';
@@ -83,7 +83,8 @@ html {
 body {
 	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 0.95rem;
-	color: #666;
+	color: #444;
+	background: #FEFEFE;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	min-height: 100%;
@@ -104,13 +105,13 @@ h1 {
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	margin: 1.5rem 0 1rem 0;
 	line-height: 1.5;
 }
 
 h3 {
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	margin: 0.8rem 0;
 }
 
@@ -132,12 +133,12 @@ p {
 
 p,
 .post-body {
-	line-height: 1.8;
+	line-height: 1.6;
 }
 
 ul,
 ol 	{
-	margin: 0.3rem 2rem;
+	margin: 0.3rem 2.5rem;
 }
 
 p > ul,
@@ -148,8 +149,11 @@ p > ol {
 
 li	{
 	padding: 0.1rem;
-    list-style-type: circle;
-	list-style-position: inside;
+	/* list-style-position: inside; */
+}
+
+ul > li {
+	list-style-type: circle;
 }
 
 a,
@@ -181,12 +185,12 @@ em, i {
 header {
 	text-align:center;
 	margin-bottom: 2rem;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #DDD;
 	padding-bottom: 1rem;
 }
 
 footer {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #DDD;
 	padding: 2rem 0 0 0;
 	margin-top: 3rem;
 	text-align: center;
@@ -194,7 +198,7 @@ footer {
 
 blockquote {
 	padding-left: 1rem;
-	border-left: 3px solid #eee;
+	border-left: 3px solid #DDD;
 }
 
 hr {
@@ -202,7 +206,7 @@ hr {
 	border: none;
 	height: 1px;
 	margin: 2.5rem auto;
-	background: #eee;
+	background: #DDD;
 }
 
 code { 
@@ -325,7 +329,7 @@ img {
 }
 
 .profile h2 {
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     color: #AAA;
     margin-top: 0.8rem;
 }
@@ -353,7 +357,7 @@ img {
 .headline {
 	margin: 0.6rem 0;
 	font-size: 0.84rem;
-	color: #B2B9BE;
+	color: #AAB1B5;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
@@ -374,7 +378,7 @@ img {
  *****************************************************************************/
 
 .post-nav {
-	border-top: 1px solid #eee;
+	border-top: 1px solid #DDD;
 	text-align: center;
 	padding-top: 1rem;
 	font-size: 0.9rem;
@@ -427,12 +431,12 @@ img {
 
 .post-meta {
     line-height: 1.4;
-    border-top: 1px solid #eee;
-    padding-top: 2.5rem;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
     margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
     margin-top: 2.5rem;
-    border-bottom: 1px solid #eee;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
 }
 
 .post-meta div {
@@ -441,13 +445,13 @@ img {
 }
 
 .post-meta div span {
-	color: #aaa;
-	font-weight: 500;
+	color: #AAA;
 	display: block;
 }
 
-.post-meta .dark {
-	color: #1E2025;
+.post-meta .author {
+	font-weight: 500;
+	color: #222;
 }
 
 .post-meta img.avatar {
@@ -455,9 +459,8 @@ img {
   width: 36px;
   float: left;
   border-radius: 50%;
-  margin-top: 3px;
-  margin-right: 20px;
-  box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
+  margin: 3px 20px 3px 0;
+  box-shadow: 0 0 0 3px #EEE, 0 0 0 4px #DDD;
 }
 
 
@@ -472,7 +475,7 @@ img {
 .sharing a {
 	font-size: 0.84rem;
     margin-left: 0.1rem;
-    color: #fff;
+    color: #FEFEFE;
     font-weight: bold;
     display: inline-block;
     vertical-align: middle;
@@ -498,16 +501,17 @@ img {
  *****************************************************************************/
 
 .post-list h1 {
+	font-family: 'Roboto';
 	font-size: 1.2rem;
 	margin-top: 0;
-	margin-bottom: 0.6rem;
+	margin-bottom: 0.3rem;
 }
 
 .post-list h2 {
+	font-family: 'Roboto';
 	font-size: 0.95rem;
 	color: #AAA;
 	margin: 0;
-	font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 ul.post-list {
@@ -550,7 +554,10 @@ ul.post-list {
 }
 
 .readmore h3 {
+	font-family: 'Roboto Condensed';
+	font-weight: 300;
 	color: #AAA;
+	text-transform: uppercase;
 }
 
 
@@ -622,7 +629,7 @@ ul.post-list {
 @media screen and (max-width: 540px) {
 
 	.wrapper {
-    	padding: 0 2rem;
+    	padding: 0 1.8rem;
 	}
 
 	.post {

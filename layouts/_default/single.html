@@ -13,7 +13,7 @@
                     {{ with .Params.tags }}
                     {{ if ge (len .) 1 }}
                         {{ range . }}
-                            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>
+                            <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a> |
                         {{ end }}
                     {{ end }}
                     {{ end}}
@@ -27,7 +27,7 @@
                 {{ with .Site.Params.twitter }}<a href="https://twitter.com/{{ . }}">{{ end }}
                         <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.png">
                         <div>
-                            <span class="dark">{{ .Site.Params.name }}</span>
+                            <span class="author">{{ .Site.Params.name }}</span>
                             <span>{{ .Site.Params.aboutAuthor }}</span>
                         </div>
                     {{ with .Site.Params.twitter }}</a>{{ end }}
