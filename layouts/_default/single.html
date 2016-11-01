@@ -24,7 +24,7 @@
                 </section>
             </article>
             <div class="post-meta clearfix">
-                {{ with .Site.Params.twitter }}<a href="https://twitter.com/{{ . }}">{{ end }}
+                {{ with .Site.Params.authorLink }}<a href="{{ . }}">{{ end }}
                         <img class="avatar" src="{{ .Site.BaseURL }}images/avatar.png">
                         <div>
                             <span class="author">{{ .Site.Params.name }}</span>

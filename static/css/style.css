@@ -174,7 +174,7 @@ a:hover {
 
 b,
 strong {
-	font-weight: 500;
+	font-weight: 600;
 }
 
 em, i {
@@ -629,7 +629,7 @@ ul.post-list {
 @media screen and (max-width: 540px) {
 
 	.wrapper {
-    	padding: 0 1.8rem;
+    	padding: 0 1.5rem;
 	}
 
 	.post {
